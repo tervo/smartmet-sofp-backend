@@ -6,7 +6,7 @@
   "sofp-backend": "SofpSmartmetBackend",
   "scripts": {
     "start": "tsc -w & nodemon ../sofp-core/dist/server/app.js .",
-    "build": "tsc",
+    "build": "tsc --skipLibCheck",
     "test": "jest dist/**.test.js"
   },
   "engines": {
