@@ -40,7 +40,8 @@ function idToString (featureId : IFeatureId) {
 }
 
 const fs = require('fs');
-var readStream = fs.createReadStream('backends/smartmet-sofp-backend/cnf/smartmet.json');
+
+var readStream = fs.createReadStream(__dirname+'/../cnf/smartmet.json');
 var buf = '';
 
 readStream.on('data', (chunk) => {
