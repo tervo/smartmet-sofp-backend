@@ -24,7 +24,27 @@
                                                     "producer": "observations_fmi",
                                                     "defaultlocation" : "keyword=synop_fi",
                                                     "defaulttime" : "starttime=-1h",
-                                                    "defaultparameters" : "Temperature, Pressure, Humidity, WindDirection, WindSpeedMS, WindGust, DewPoint, TotalCloudCover, Precipitation1h"
+                                                    "defaultparameters" : "Temperature, Pressure, Humidity, WindDirection, WindSpeedMS, WindGust, DewPoint, TotalCloudCover, Precipitation1h",
+                                                    "links" : [
+                                                      {
+                                                        "href" : "http://catalog.fmi.fi/geonetwork/srv/api/records/bf238561-eb04-4c0b-b9dc-113fb5c6b3c4/formatters/xml",
+                                                        "rel" : "describedBy",
+                                                        "type" : "application/xml",
+                                                        "title" : "Säähavainnot"
+                                                      },
+                                                      {
+                                                        "href" : "http://catalog.fmi.fi/geonetwork/srv/fin/catalog.search#/metadata/bf238561-eb04-4c0b-b9dc-113fb5c6b3c4",
+                                                        "rel" : "describedBy",
+                                                        "type" : "application/html",
+                                                        "title" : "Säähavainnot"
+                                                      },
+                                                      {
+                                                        "href" : "https://creativecommons.org/licenses/by/4.0/",
+                                                        "rel" : "license",
+                                                        "type" : "application/html",
+                                                        "title" : "CC BY 4.0"
+                                                      }
+                                                    ]
                                                    }
                                                   ],
                                   "timesteps" : ["10m"]

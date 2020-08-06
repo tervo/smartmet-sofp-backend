@@ -255,7 +255,8 @@ readStream.on('data', (chunk) => {
                         //                                                            true,
                         //                                                            false));
 
-                        SofpSmartmetBackend.collections.push(new GeoJSONCollection(collection.id,
+                        let theCollection : GeoJSONCollection = {} as any;
+                        theCollection = new GeoJSONCollection(collection.id,
                                                                                    collection.name,
                                                                                    collection.title,
                                                                                    collection.description  + ' in time series format' +
@@ -269,7 +270,13 @@ readStream.on('data', (chunk) => {
                                                                                    collection.defaultparameters,
                                                                                    conf.featureid,
                                                                                    true,
-                                                                                   true));
+                                                                                   true);
+                        if (_.has(collection,'links')) {
+                          collection.links.forEach((l, i) => {
+                            theCollection.links.push(l);
+                          });
+                        }
+                        SofpSmartmetBackend.collections.push(theCollection);
                     });
                 });
             });
