@@ -1,4 +1,4 @@
-import {Backend, Collection, Link, Query, FeatureStream, Feature, Item, Filter, Property, QueryParameter} from 'sofp-lib';
+import {Backend, Collection, Link, Query, FeatureStream, Feature, Item, Filter, Property, QueryParameter, Extent} from 'sofp-lib';
 
 import * as _ from 'lodash';
 
@@ -276,6 +276,13 @@ readStream.on('data', (chunk) => {
                             theCollection.links.push(l);
                           });
                         }
+                        if (_.has(collection,'extent')) {
+                          let extent : Extent = {
+                            spatial : collection.extent.spatial,
+                            temporal : collection.extent.temporal
+                          };
+                          theCollection.extent = extent;
+                        }
                         SofpSmartmetBackend.collections.push(theCollection);
                     });
                 });
@@ -337,6 +344,7 @@ class GeoJSONCollection implements Collection {
     defaultParameters : string;
     featureId : FeatureIdType;
     data : GeoJSONFeatureCollection;
+    extent : Extent;
 
     properties : Property [] = [{
         name: 'observationType',
