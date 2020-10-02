@@ -39,6 +39,12 @@
                                                         "title" : "Säähavainnot"
                                                       },
                                                       {
+                                                        "href" : "https://inspire.ec.europa.eu/featureconcept/PointTimeSeriesObservation/PointTimeSeriesObservation.en.json",
+                                                        "rel" : "tag",
+                                                        "type" : "application/json",
+                                                        "title" : "INSPIRE feature concept dictionary"
+                                                      },
+                                                      {
                                                         "href" : "https://creativecommons.org/licenses/by/4.0/",
                                                         "rel" : "license",
                                                         "type" : "application/html",
